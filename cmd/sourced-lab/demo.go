@@ -321,7 +321,7 @@ func prepareDemo(dir, sites string) error {
 			if _, err := os.Stat(filepath.Join(src, "PLAIN")); err == nil {
 				return fakenet.CopyTree(filepath.Join(src, "public"), filepath.Join(tmp, "public"))
 			}
-			c, err := publisher.Init(tmp, e.Name(), "public", demoStart)
+			c, err := publisher.Init(tmp, e.Name(), "public", "", demoStart)
 			if err != nil {
 				return err
 			}
@@ -347,7 +347,7 @@ func prepareCorpusSite(dir, corpusDir string, log *slog.Logger) error {
 			return err
 		}
 		log.Info("publishing corpus", "corpus", c.Name, "articles", len(c.Articles), "as", bench.BenchDomain)
-		cfg, err := publisher.Init(tmp, bench.BenchDomain, "public", demoStart)
+		cfg, err := publisher.Init(tmp, bench.BenchDomain, "public", "", demoStart)
 		if err != nil {
 			return err
 		}

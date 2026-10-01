@@ -37,7 +37,7 @@ func newReplaySite(p *pages, pt parts, tune func(*resolver.Config)) (*replaySite
 		s.close()
 		return nil, err
 	}
-	if s.pub, err = publisher.Init(filepath.Join(tmp, "publisher"), BenchDomain, "public", time.Date(2026, 1, 1, 0, 0, 0, 0, time.UTC)); err != nil {
+	if s.pub, err = publisher.Init(filepath.Join(tmp, "publisher"), BenchDomain, "public", "", time.Date(2026, 1, 1, 0, 0, 0, 0, time.UTC)); err != nil {
 		s.close()
 		return nil, err
 	}
