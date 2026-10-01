@@ -1,0 +1,30 @@
+# Questions about wikipedia-100 articles, each with text its answer contains
+# (checked against each article's latest revision). Used by the `ranking`
+# experiment (automatic) and by E7 (by hand, in Claude Code).
+corpus: wikipedia-100
+questions:
+  - {article: "Apollo 11", question: "When did Apollo 11 land on the Moon?", answer: "July 20, 1969"}
+  - {article: "Go (programming language)", question: "Who designed the Go programming language?", answer: "Ken Thompson"}
+  - {article: "Python (programming language)", question: "Who created Python?", answer: "Guido van Rossum"}
+  - {article: "Lake Baikal", question: "How deep is Lake Baikal?", answer: "1,642"}
+  - {article: "Penicillin", question: "Who discovered penicillin?", answer: "Alexander Fleming"}
+  - {article: "Magna Carta", question: "When was Magna Carta sealed?", answer: "1215"}
+  - {article: "Mona Lisa", question: "Who painted the Mona Lisa?", answer: "Leonardo da Vinci"}
+  - {article: "Mount Everest", question: "How tall is Mount Everest?", answer: "8,848"}
+  - {article: "Byzantine Empire", question: "When did Constantinople fall to the Ottomans?", answer: "1453"}
+  - {article: "Ada Lovelace", question: "Which machine did Ada Lovelace write about?", answer: "Analytical Engine"}
+  - {article: "Cape Verde", question: "What is the capital of Cape Verde?", answer: "Praia"}
+  - {article: "Insulin", question: "Which organ produces insulin?", answer: "pancreas"}
+  - {article: "Black Death", question: "Which bacterium caused the Black Death?", answer: "Yersinia pestis"}
+  - {article: "Haiku", question: "How many morae does a haiku have?", answer: "17"}
+  - {article: "Tardigrade", question: "What are tardigrades also called?", answer: "water bears"}
+  - {article: "European Union", question: "Which treaty established the European Union?", answer: "Maastricht"}
+  - {article: "Linux", question: "Who created the Linux kernel?", answer: "Linus Torvalds"}
+  - {article: "World Wide Web", question: "Who invented the World Wide Web?", answer: "Tim Berners-Lee"}
+  - {article: "Transistor", question: "When was the first working transistor built?", answer: "1947"}
+  - {article: "Git", question: "Who created Git?", answer: "Linus Torvalds"}
+  - {article: "Tokyo", question: "What was Tokyo formerly called?", answer: "Edo"}
+  - {article: "Silk Road", question: "Which regions did the Silk Road connect?", answer: "China"}
+  - {article: "Bitcoin", question: "Who invented Bitcoin?", answer: "Satoshi Nakamoto"}
+  - {article: "Photosynthesis", question: "Which pigment absorbs light in photosynthesis?", answer: "chlorophyll"}
+  - {article: "Ludwig van Beethoven", question: "Where was Beethoven born?", answer: "Bonn"}

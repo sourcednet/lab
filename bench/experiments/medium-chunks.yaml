@@ -1,0 +1,6 @@
+# E1/E2: between small and the baseline, the candidate sweet spot.
+name: medium-chunks
+corpus: bench/corpus/wikipedia-100
+chunking: {min: 200, target: 1000, max: 3000}
+experiments: [stability, tokens, passages, ranking]
+ranking: {questions: bench/questions/wikipedia-100.yaml}

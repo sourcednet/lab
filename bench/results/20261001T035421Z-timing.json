@@ -1,0 +1,123 @@
+{
+  "name": "timing",
+  "config": {
+    "name": "timing",
+    "corpus": "bench/corpus/wikipedia-100",
+    "articles": 0,
+    "chunking": {
+      "min": 300,
+      "target": 1500,
+      "max": 4000
+    },
+    "extraction": {
+      "drop": null
+    },
+    "experiments": [
+      "latency",
+      "corrections"
+    ],
+    "tokens": {
+      "encoding": "cl100k_base",
+      "query_chunks": 3
+    },
+    "passages": {
+      "per_article": 3,
+      "seed": 1
+    },
+    "latency": {
+      "samples": 20,
+      "publisher_delay_ms": 50
+    },
+    "corrections": {
+      "samples": 10,
+      "poll_interval_ms": 2000
+    },
+    "ranking": {
+      "questions": "bench/questions/wikipedia-100.yaml"
+    }
+  },
+  "corpus": {
+    "name": "wikipedia-100",
+    "checksum": "sha256:cfb83094b4540fc0cdbd2622e2b445d5c16d5d1830806894f79c6095188aa5b5",
+    "articles": 100
+  },
+  "git": {
+    "commit": "8a3c8b13323baab4001ca9f2400f4253c2b96d32",
+    "dirty": true
+  },
+  "go": "go1.24.4",
+  "started": "2026-10-01T03:54:21Z",
+  "metrics": {
+    "corrections": {
+      "samples": 10,
+      "poll_interval_ms": 2000,
+      "polling_only_ms": {
+        "n": 10,
+        "mean": 1204.5036,
+        "median": 1206.923,
+        "p10": 1158.684,
+        "p90": 1229.463,
+        "min": 1158.684,
+        "max": 1230.438
+      },
+      "with_announce_ms": {
+        "n": 10,
+        "mean": 98.3848,
+        "median": 95.269,
+        "p10": 16.885,
+        "p90": 144.983,
+        "min": 16.885,
+        "max": 150.078
+      },
+      "note": "resolve answers are checked live, so they show a correction immediately"
+    },
+    "latency": {
+      "samples": 20,
+      "publisher_delay_ms": 50,
+      "direct_cold_ms": {
+        "n": 20,
+        "mean": 212.9824,
+        "median": 212.412,
+        "p10": 209.264,
+        "p90": 216.488,
+        "min": 209.123,
+        "max": 219.022
+      },
+      "direct_warm_ms": {
+        "n": 20,
+        "mean": 160.5822,
+        "median": 160.317,
+        "p10": 156.317,
+        "p90": 164.286,
+        "min": 155.605,
+        "max": 168.01
+      },
+      "resolver_cold_ms": {
+        "n": 20,
+        "mean": 986.1533,
+        "median": 919.862,
+        "p10": 538.176,
+        "p90": 1146.367,
+        "min": 515.835,
+        "max": 1934.141
+      },
+      "resolver_warm_ms": {
+        "n": 20,
+        "mean": 35.4093,
+        "median": 34.034,
+        "p10": 18.948,
+        "p90": 47.869,
+        "min": 18.681,
+        "max": 63.233
+      }
+    }
+  },
+  "timed_experiments": [
+    "latency",
+    "corrections"
+  ],
+  "timings_seconds": {
+    "corrections": 37.072,
+    "latency": 29.928
+  }
+}

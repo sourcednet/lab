@@ -1,0 +1,289 @@
+{
+  "name": "small-chunks",
+  "config": {
+    "name": "small-chunks",
+    "corpus": "bench/corpus/wikipedia-100",
+    "articles": 0,
+    "chunking": {
+      "min": 150,
+      "target": 800,
+      "max": 2000
+    },
+    "extraction": {
+      "drop": null
+    },
+    "experiments": [
+      "stability",
+      "tokens",
+      "passages",
+      "ranking"
+    ],
+    "tokens": {
+      "encoding": "cl100k_base",
+      "query_chunks": 3
+    },
+    "passages": {
+      "per_article": 3,
+      "seed": 1
+    },
+    "latency": {
+      "samples": 20,
+      "publisher_delay_ms": 50
+    },
+    "corrections": {
+      "samples": 10,
+      "poll_interval_ms": 2000
+    },
+    "ranking": {
+      "questions": "bench/questions/wikipedia-100.yaml"
+    }
+  },
+  "corpus": {
+    "name": "wikipedia-100",
+    "checksum": "sha256:cfb83094b4540fc0cdbd2622e2b445d5c16d5d1830806894f79c6095188aa5b5",
+    "articles": 100
+  },
+  "git": {
+    "commit": "8a3c8b13323baab4001ca9f2400f4253c2b96d32",
+    "dirty": true
+  },
+  "go": "go1.24.4",
+  "started": "2026-10-01T03:33:01Z",
+  "metrics": {
+    "passages": {
+      "exact_sentence": {
+        "samples": 300,
+        "found": 1,
+        "top1": 0.9967,
+        "exact_match": 1,
+        "mean_overlap": 1,
+        "ambiguous": 0.0333
+      },
+      "fragment": {
+        "samples": 300,
+        "found": 0.9967,
+        "top1": 0.9833,
+        "exact_match": 1,
+        "mean_overlap": 1,
+        "ambiguous": 0.0333
+      },
+      "edited_sentence": {
+        "samples": 300,
+        "found": 1,
+        "top1": 0.9967,
+        "exact_match": 0,
+        "mean_overlap": 0.8041,
+        "ambiguous": 0.0333
+      }
+    },
+    "ranking": {
+      "questions": 25,
+      "hit_at_1": 0.4,
+      "hit_at_3": 0.76,
+      "hit_at_5": 0.88,
+      "mrr": 0.6026,
+      "answerable": 1,
+      "per_question": [
+        {
+          "question": "When did Apollo 11 land on the Moon?",
+          "rank": 2
+        },
+        {
+          "question": "Who designed the Go programming language?",
+          "rank": 1
+        },
+        {
+          "question": "Who created Python?",
+          "rank": 14
+        },
+        {
+          "question": "How deep is Lake Baikal?",
+          "rank": 121
+        },
+        {
+          "question": "Who discovered penicillin?",
+          "rank": 4
+        },
+        {
+          "question": "When was Magna Carta sealed?",
+          "rank": 1
+        },
+        {
+          "question": "Who painted the Mona Lisa?",
+          "rank": 1
+        },
+        {
+          "question": "How tall is Mount Everest?",
+          "rank": 418
+        },
+        {
+          "question": "When did Constantinople fall to the Ottomans?",
+          "rank": 1
+        },
+        {
+          "question": "Which machine did Ada Lovelace write about?",
+          "rank": 5
+        },
+        {
+          "question": "What is the capital of Cape Verde?",
+          "rank": 2
+        },
+        {
+          "question": "Which organ produces insulin?",
+          "rank": 2
+        },
+        {
+          "question": "Which bacterium caused the Black Death?",
+          "rank": 1
+        },
+        {
+          "question": "How many morae does a haiku have?",
+          "rank": 2
+        },
+        {
+          "question": "What are tardigrades also called?",
+          "rank": 2
+        },
+        {
+          "question": "Which treaty established the European Union?",
+          "rank": 3
+        },
+        {
+          "question": "Who created the Linux kernel?",
+          "rank": 1
+        },
+        {
+          "question": "Who invented the World Wide Web?",
+          "rank": 2
+        },
+        {
+          "question": "When was the first working transistor built?",
+          "rank": 2
+        },
+        {
+          "question": "Who created Git?",
+          "rank": 5
+        },
+        {
+          "question": "What was Tokyo formerly called?",
+          "rank": 1
+        },
+        {
+          "question": "Which regions did the Silk Road connect?",
+          "rank": 1
+        },
+        {
+          "question": "Who invented Bitcoin?",
+          "rank": 1
+        },
+        {
+          "question": "Which pigment absorbs light in photosynthesis?",
+          "rank": 1
+        },
+        {
+          "question": "Where was Beethoven born?",
+          "rank": 2
+        }
+      ]
+    },
+    "stability": {
+      "transitions": 1997,
+      "unchanged_share": 0.0856,
+      "survival_per_edit": {
+        "n": 1826,
+        "mean": 0.9565,
+        "median": 0.9966,
+        "p10": 0.8423,
+        "p90": 0.9987,
+        "min": 0.2899,
+        "max": 1
+      },
+      "survival_overall": 0.9583,
+      "new_chunks_per_edit": {
+        "n": 1826,
+        "mean": 21.3034,
+        "median": 1,
+        "p10": 1,
+        "p90": 61,
+        "min": 0,
+        "max": 585
+      },
+      "survival_first_to_last": {
+        "n": 100,
+        "mean": 0.6976,
+        "median": 0.675,
+        "p10": 0.4628,
+        "p90": 0.9745,
+        "min": 0.2798,
+        "max": 0.9901
+      },
+      "chunks_per_page": {
+        "n": 100,
+        "mean": 513.64,
+        "median": 451,
+        "p10": 211,
+        "p90": 835,
+        "min": 99,
+        "max": 1216
+      },
+      "chunk_chars": {
+        "n": 51364,
+        "mean": 632.5272,
+        "median": 588,
+        "p10": 230,
+        "p90": 1105,
+        "min": 1,
+        "max": 2000
+      }
+    },
+    "tokens": {
+      "encoding": "cl100k_base",
+      "pages": 100,
+      "raw_html": {
+        "tokens": 20437637,
+        "chars": 62064819
+      },
+      "readability_text": {
+        "tokens": 2590368,
+        "chars": 10137756
+      },
+      "sourced_all_chunks": {
+        "tokens": 9370951,
+        "chars": 32591857
+      },
+      "sourced_query_chunks": {
+        "tokens": 40416,
+        "chars": 154818
+      },
+      "chunks_vs_html": 0.4585,
+      "chunks_vs_readability": 3.6176,
+      "query_vs_html": 0.002,
+      "query_vs_readability": 0.0156,
+      "per_page_chunks_tokens": {
+        "n": 100,
+        "mean": 93709.51,
+        "median": 85453,
+        "p10": 34540,
+        "p90": 158341,
+        "min": 17179,
+        "max": 233917
+      },
+      "per_page_query_chunks_tokens": {
+        "n": 100,
+        "mean": 404.16,
+        "median": 377,
+        "p10": 183,
+        "p90": 622,
+        "min": 110,
+        "max": 1245
+      },
+      "query": "the article's title, top 3 chunks"
+    }
+  },
+  "timings_seconds": {
+    "passages": 255.403,
+    "ranking": 1.103,
+    "stability": 88.787,
+    "tokens": 32.183
+  }
+}

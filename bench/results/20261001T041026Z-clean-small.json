@@ -1,0 +1,527 @@
+{
+  "name": "clean-small",
+  "config": {
+    "name": "clean-small",
+    "corpus": "bench/corpus/wikipedia-100",
+    "articles": 0,
+    "chunking": {
+      "min": 150,
+      "target": 800,
+      "max": 2000
+    },
+    "extraction": {
+      "drop": [
+        ".reflist",
+        "ol.references",
+        ".mw-references-wrap",
+        "sup.reference",
+        ".navbox",
+        ".navbox-styles",
+        ".hatnote",
+        "figure",
+        ".thumb",
+        ".metadata",
+        ".sistersitebox",
+        ".noprint",
+        ".mw-empty-elt"
+      ]
+    },
+    "experiments": [
+      "stability",
+      "tokens",
+      "cost",
+      "passages",
+      "ranking"
+    ],
+    "tokens": {
+      "encoding": "cl100k_base",
+      "query_chunks": 3
+    },
+    "passages": {
+      "per_article": 3,
+      "seed": 1
+    },
+    "latency": {
+      "samples": 20,
+      "publisher_delay_ms": 50
+    },
+    "corrections": {
+      "samples": 10,
+      "poll_interval_ms": 2000
+    },
+    "ranking": {
+      "questions": "bench/questions/wikipedia-100.yaml"
+    }
+  },
+  "corpus": {
+    "name": "wikipedia-100",
+    "checksum": "sha256:cfb83094b4540fc0cdbd2622e2b445d5c16d5d1830806894f79c6095188aa5b5",
+    "articles": 100
+  },
+  "git": {
+    "commit": "06f4d958b7c1f7a0fdbd8f9c579758120397803b",
+    "dirty": false
+  },
+  "go": "go1.24.4",
+  "started": "2026-10-01T04:10:26Z",
+  "metrics": {
+    "cost": {
+      "pages": 100,
+      "versions": 1471,
+      "steps": [
+        {
+          "step": 0,
+          "changed_pages": 100,
+          "bundles_fetched": 100,
+          "records": 100,
+          "chunks": 17343,
+          "chunk_bytes": 12299264,
+          "index_windows": 1662873,
+          "db_bytes": 368312320
+        },
+        {
+          "step": 1,
+          "changed_pages": 78,
+          "bundles_fetched": 76,
+          "records": 178,
+          "chunks": 17498,
+          "chunk_bytes": 12419229,
+          "index_windows": 1679328,
+          "db_bytes": 380116992
+        },
+        {
+          "step": 2,
+          "changed_pages": 69,
+          "bundles_fetched": 60,
+          "records": 247,
+          "chunks": 17590,
+          "chunk_bytes": 12493040,
+          "index_windows": 1689553,
+          "db_bytes": 389406720
+        },
+        {
+          "step": 3,
+          "changed_pages": 71,
+          "bundles_fetched": 62,
+          "records": 318,
+          "chunks": 17689,
+          "chunk_bytes": 12573992,
+          "index_windows": 1700664,
+          "db_bytes": 399118336
+        },
+        {
+          "step": 4,
+          "changed_pages": 58,
+          "bundles_fetched": 49,
+          "records": 376,
+          "chunks": 17793,
+          "chunk_bytes": 12658453,
+          "index_windows": 1712030,
+          "db_bytes": 407748608
+        },
+        {
+          "step": 5,
+          "changed_pages": 64,
+          "bundles_fetched": 58,
+          "records": 440,
+          "chunks": 17876,
+          "chunk_bytes": 12721615,
+          "index_windows": 1720525,
+          "db_bytes": 416276480
+        },
+        {
+          "step": 6,
+          "changed_pages": 66,
+          "bundles_fetched": 56,
+          "records": 506,
+          "chunks": 17964,
+          "chunk_bytes": 12791822,
+          "index_windows": 1730307,
+          "db_bytes": 425250816
+        },
+        {
+          "step": 7,
+          "changed_pages": 70,
+          "bundles_fetched": 64,
+          "records": 576,
+          "chunks": 18110,
+          "chunk_bytes": 12885963,
+          "index_windows": 1743646,
+          "db_bytes": 435404800
+        },
+        {
+          "step": 8,
+          "changed_pages": 68,
+          "bundles_fetched": 53,
+          "records": 644,
+          "chunks": 18216,
+          "chunk_bytes": 12969274,
+          "index_windows": 1755045,
+          "db_bytes": 444985344
+        },
+        {
+          "step": 9,
+          "changed_pages": 72,
+          "bundles_fetched": 60,
+          "records": 716,
+          "chunks": 18332,
+          "chunk_bytes": 13061047,
+          "index_windows": 1767824,
+          "db_bytes": 455032832
+        },
+        {
+          "step": 10,
+          "changed_pages": 71,
+          "bundles_fetched": 58,
+          "records": 787,
+          "chunks": 18434,
+          "chunk_bytes": 13139669,
+          "index_windows": 1778360,
+          "db_bytes": 464437248
+        },
+        {
+          "step": 11,
+          "changed_pages": 69,
+          "bundles_fetched": 56,
+          "records": 856,
+          "chunks": 18555,
+          "chunk_bytes": 13239593,
+          "index_windows": 1791466,
+          "db_bytes": 474189824
+        },
+        {
+          "step": 12,
+          "changed_pages": 68,
+          "bundles_fetched": 62,
+          "records": 924,
+          "chunks": 18648,
+          "chunk_bytes": 13318145,
+          "index_windows": 1802217,
+          "db_bytes": 483000320
+        },
+        {
+          "step": 13,
+          "changed_pages": 73,
+          "bundles_fetched": 65,
+          "records": 997,
+          "chunks": 18736,
+          "chunk_bytes": 13378910,
+          "index_windows": 1810166,
+          "db_bytes": 491372544
+        },
+        {
+          "step": 14,
+          "changed_pages": 64,
+          "bundles_fetched": 55,
+          "records": 1061,
+          "chunks": 18852,
+          "chunk_bytes": 13463473,
+          "index_windows": 1821862,
+          "db_bytes": 500310016
+        },
+        {
+          "step": 15,
+          "changed_pages": 71,
+          "bundles_fetched": 59,
+          "records": 1132,
+          "chunks": 18962,
+          "chunk_bytes": 13552590,
+          "index_windows": 1834470,
+          "db_bytes": 510078976
+        },
+        {
+          "step": 16,
+          "changed_pages": 66,
+          "bundles_fetched": 57,
+          "records": 1198,
+          "chunks": 19072,
+          "chunk_bytes": 13636597,
+          "index_windows": 1845593,
+          "db_bytes": 519565312
+        },
+        {
+          "step": 17,
+          "changed_pages": 71,
+          "bundles_fetched": 60,
+          "records": 1269,
+          "chunks": 19210,
+          "chunk_bytes": 13745500,
+          "index_windows": 1860540,
+          "db_bytes": 530083840
+        },
+        {
+          "step": 18,
+          "changed_pages": 70,
+          "bundles_fetched": 55,
+          "records": 1339,
+          "chunks": 19280,
+          "chunk_bytes": 13800515,
+          "index_windows": 1868144,
+          "db_bytes": 539144192
+        },
+        {
+          "step": 19,
+          "changed_pages": 64,
+          "bundles_fetched": 51,
+          "records": 1403,
+          "chunks": 19349,
+          "chunk_bytes": 13860130,
+          "index_windows": 1876286,
+          "db_bytes": 548024320
+        },
+        {
+          "step": 20,
+          "changed_pages": 68,
+          "bundles_fetched": 49,
+          "records": 1471,
+          "chunks": 19436,
+          "chunk_bytes": 13926507,
+          "index_windows": 1884780,
+          "db_bytes": 556646400
+        }
+      ],
+      "resolver_bytes": 570572907,
+      "publisher_bytes": 273140395,
+      "resolver_bytes_per_page": 5705729,
+      "resolver_bytes_per_version": 387880,
+      "dedup_ratio": 13.6261,
+      "index_windows_per_chunk": 96.9737
+    },
+    "passages": {
+      "exact_sentence": {
+        "samples": 300,
+        "found": 1,
+        "top1": 1,
+        "exact_match": 1,
+        "mean_overlap": 1,
+        "ambiguous": 0
+      },
+      "fragment": {
+        "samples": 300,
+        "found": 0.9967,
+        "top1": 0.9967,
+        "exact_match": 0.9967,
+        "mean_overlap": 0.9967,
+        "ambiguous": 0
+      },
+      "edited_sentence": {
+        "samples": 300,
+        "found": 1,
+        "top1": 1,
+        "exact_match": 0,
+        "mean_overlap": 0.7222,
+        "ambiguous": 0
+      }
+    },
+    "ranking": {
+      "questions": 25,
+      "hit_at_1": 0.44,
+      "hit_at_3": 0.72,
+      "hit_at_5": 0.8,
+      "mrr": 0.6042,
+      "answerable": 1,
+      "per_question": [
+        {
+          "question": "When did Apollo 11 land on the Moon?",
+          "rank": 38
+        },
+        {
+          "question": "Who designed the Go programming language?",
+          "rank": 1
+        },
+        {
+          "question": "Who created Python?",
+          "rank": 6
+        },
+        {
+          "question": "How deep is Lake Baikal?",
+          "rank": 45
+        },
+        {
+          "question": "Who discovered penicillin?",
+          "rank": 3
+        },
+        {
+          "question": "When was Magna Carta sealed?",
+          "rank": 1
+        },
+        {
+          "question": "Who painted the Mona Lisa?",
+          "rank": 7
+        },
+        {
+          "question": "How tall is Mount Everest?",
+          "rank": 77
+        },
+        {
+          "question": "When did Constantinople fall to the Ottomans?",
+          "rank": 1
+        },
+        {
+          "question": "Which machine did Ada Lovelace write about?",
+          "rank": 2
+        },
+        {
+          "question": "What is the capital of Cape Verde?",
+          "rank": 2
+        },
+        {
+          "question": "Which organ produces insulin?",
+          "rank": 2
+        },
+        {
+          "question": "Which bacterium caused the Black Death?",
+          "rank": 1
+        },
+        {
+          "question": "How many morae does a haiku have?",
+          "rank": 1
+        },
+        {
+          "question": "What are tardigrades also called?",
+          "rank": 1
+        },
+        {
+          "question": "Which treaty established the European Union?",
+          "rank": 2
+        },
+        {
+          "question": "Who created the Linux kernel?",
+          "rank": 1
+        },
+        {
+          "question": "Who invented the World Wide Web?",
+          "rank": 1
+        },
+        {
+          "question": "When was the first working transistor built?",
+          "rank": 2
+        },
+        {
+          "question": "Who created Git?",
+          "rank": 5
+        },
+        {
+          "question": "What was Tokyo formerly called?",
+          "rank": 5
+        },
+        {
+          "question": "Which regions did the Silk Road connect?",
+          "rank": 1
+        },
+        {
+          "question": "Who invented Bitcoin?",
+          "rank": 1
+        },
+        {
+          "question": "Which pigment absorbs light in photosynthesis?",
+          "rank": 1
+        },
+        {
+          "question": "Where was Beethoven born?",
+          "rank": 2
+        }
+      ]
+    },
+    "stability": {
+      "transitions": 1997,
+      "unchanged_share": 0.311,
+      "survival_per_edit": {
+        "n": 1376,
+        "mean": 0.9885,
+        "median": 0.9925,
+        "p10": 0.9811,
+        "p90": 0.997,
+        "min": 0.6744,
+        "max": 1
+      },
+      "survival_overall": 0.9908,
+      "new_chunks_per_edit": {
+        "n": 1376,
+        "mean": 1.7275,
+        "median": 1,
+        "p10": 1,
+        "p90": 3,
+        "min": 0,
+        "max": 42
+      },
+      "survival_first_to_last": {
+        "n": 100,
+        "mean": 0.9208,
+        "median": 0.9392,
+        "p10": 0.8318,
+        "p90": 0.9791,
+        "min": 0.6615,
+        "max": 1
+      },
+      "chunks_per_page": {
+        "n": 100,
+        "mean": 179.02,
+        "median": 152,
+        "p10": 81,
+        "p90": 301,
+        "min": 53,
+        "max": 594
+      },
+      "chunk_chars": {
+        "n": 17902,
+        "mean": 698.1199,
+        "median": 636,
+        "p10": 251,
+        "p90": 1267,
+        "min": 1,
+        "max": 2000
+      }
+    },
+    "tokens": {
+      "encoding": "cl100k_base",
+      "pages": 100,
+      "raw_html": {
+        "tokens": 20437637,
+        "chars": 62064819
+      },
+      "readability_text": {
+        "tokens": 2590368,
+        "chars": 10137756
+      },
+      "sourced_all_chunks": {
+        "tokens": 3189290,
+        "chars": 12533546
+      },
+      "sourced_query_chunks": {
+        "tokens": 48726,
+        "chars": 190909
+      },
+      "chunks_vs_html": 0.156,
+      "chunks_vs_readability": 1.2312,
+      "query_vs_html": 0.0024,
+      "query_vs_readability": 0.0188,
+      "per_page_chunks_tokens": {
+        "n": 100,
+        "mean": 31892.9,
+        "median": 28041,
+        "p10": 13087,
+        "p90": 57318,
+        "min": 8243,
+        "max": 83442
+      },
+      "per_page_query_chunks_tokens": {
+        "n": 100,
+        "mean": 487.26,
+        "median": 459,
+        "p10": 208,
+        "p90": 778,
+        "min": 148,
+        "max": 1180
+      },
+      "query": "the article's title, top 3 chunks"
+    }
+  },
+  "timings_seconds": {
+    "cost": 195.745,
+    "passages": 131.168,
+    "ranking": 0.824,
+    "stability": 47.213,
+    "tokens": 28.896
+  }
+}

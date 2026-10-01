@@ -1,0 +1,14 @@
+# E4 latency and E5 correction speed on the chosen settings: clean
+# extraction and 150/800/2000 chunks. timing.yaml stays pinned to the
+# baseline, so its runs stay comparable with the first recorded one.
+# These measure wall-clock time, so results vary between runs; run on an
+# otherwise idle machine.
+name: timing-clean-small
+corpus: bench/corpus/wikipedia-100
+chunking: {min: 150, target: 800, max: 2000}
+extraction:
+  drop: [".reflist", "ol.references", ".mw-references-wrap", "sup.reference", ".navbox", ".navbox-styles", ".hatnote", "figure", ".thumb", ".metadata", ".sistersitebox", ".noprint", ".mw-empty-elt"]
+  drop_sections: ["See also", "External links", "Further reading", "References", "Bibliography"]
+experiments: [latency, corrections]
+latency: {samples: 20, publisher_delay_ms: 50}
+corrections: {samples: 10, poll_interval_ms: 2000}

@@ -1,0 +1,148 @@
+{
+  "name": "timing-clean-small",
+  "config": {
+    "name": "timing-clean-small",
+    "corpus": "bench/corpus/wikipedia-100",
+    "articles": 0,
+    "chunking": {
+      "min": 150,
+      "target": 800,
+      "max": 2000
+    },
+    "extraction": {
+      "drop": [
+        ".reflist",
+        "ol.references",
+        ".mw-references-wrap",
+        "sup.reference",
+        ".navbox",
+        ".navbox-styles",
+        ".hatnote",
+        "figure",
+        ".thumb",
+        ".metadata",
+        ".sistersitebox",
+        ".noprint",
+        ".mw-empty-elt"
+      ]
+    },
+    "ranker": "bm25",
+    "experiments": [
+      "latency",
+      "corrections"
+    ],
+    "tokens": {
+      "encoding": "cl100k_base",
+      "query_chunks": 3
+    },
+    "passages": {
+      "per_article": 3,
+      "seed": 1
+    },
+    "latency": {
+      "samples": 20,
+      "publisher_delay_ms": 50
+    },
+    "corrections": {
+      "samples": 10,
+      "poll_interval_ms": 2000
+    },
+    "ranking": {
+      "questions": "bench/questions/wikipedia-100.yaml",
+      "held_out": "bench/questions/wikipedia-100-heldout.yaml"
+    }
+  },
+  "corpus": {
+    "name": "wikipedia-100",
+    "checksum": "sha256:cfb83094b4540fc0cdbd2622e2b445d5c16d5d1830806894f79c6095188aa5b5",
+    "articles": 100
+  },
+  "git": {
+    "commit": "a25d4e7ba72fc1fd348c8344f7fa322e62f86494",
+    "dirty": true
+  },
+  "go": "go1.24.4",
+  "started": "2026-10-01T07:18:24Z",
+  "metrics": {
+    "corrections": {
+      "samples": 10,
+      "poll_interval_ms": 2000,
+      "polling_only_ms": {
+        "n": 10,
+        "mean": 1343.255,
+        "median": 1384.952,
+        "p10": 1008.684,
+        "p90": 1393.486,
+        "min": 1008.684,
+        "max": 1396.237
+      },
+      "with_announce_ms": {
+        "n": 10,
+        "mean": 75.556,
+        "median": 81.475,
+        "p10": 16.15,
+        "p90": 102.816,
+        "min": 16.15,
+        "max": 102.833
+      },
+      "note": "resolve answers are checked live, so they show a correction immediately"
+    },
+    "latency": {
+      "samples": 20,
+      "publisher_delay_ms": 50,
+      "direct_cold_ms": {
+        "n": 20,
+        "mean": 219.1225,
+        "median": 218.012,
+        "p10": 212.878,
+        "p90": 226.173,
+        "min": 208.545,
+        "max": 234.307
+      },
+      "direct_warm_ms": {
+        "n": 20,
+        "mean": 165.079,
+        "median": 164.607,
+        "p10": 158.792,
+        "p90": 168.902,
+        "min": 158.117,
+        "max": 174.846
+      },
+      "resolver_cold_ms": {
+        "n": 20,
+        "mean": 199.9844,
+        "median": 193.695,
+        "p10": 177.095,
+        "p90": 234.664,
+        "min": 175.812,
+        "max": 246.557
+      },
+      "resolver_warm_ms": {
+        "n": 20,
+        "mean": 16.6006,
+        "median": 14.11,
+        "p10": 7.768,
+        "p90": 29.874,
+        "min": 6.136,
+        "max": 34.098
+      },
+      "resolver_warm_indexed_ms": {
+        "n": 20,
+        "mean": 18.9264,
+        "median": 16.543,
+        "p10": 7.026,
+        "p90": 33.603,
+        "min": 6.568,
+        "max": 42.8
+      }
+    }
+  },
+  "timed_experiments": [
+    "latency",
+    "corrections"
+  ],
+  "timings_seconds": {
+    "corrections": 27.925,
+    "latency": 16.85
+  }
+}

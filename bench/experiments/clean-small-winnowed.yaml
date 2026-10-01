@@ -1,0 +1,11 @@
+# The second passage index: clean-small with a winnowed index (the smallest
+# hash of every 4 windows). Only the experiments that use the index. Compare
+# with clean-small, which uses the default (windows).
+name: clean-small-winnowed
+corpus: bench/corpus/wikipedia-100
+chunking: {min: 150, target: 800, max: 2000}
+extraction:
+  drop: [".reflist", "ol.references", ".mw-references-wrap", "sup.reference", ".navbox", ".navbox-styles", ".hatnote", "figure", ".thumb", ".metadata", ".sistersitebox", ".noprint", ".mw-empty-elt"]
+  drop_sections: ["See also", "External links", "Further reading", "References", "Bibliography"]
+index: winnowed
+experiments: [cost, passages]

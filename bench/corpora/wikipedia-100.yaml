@@ -1,0 +1,117 @@
+# Corpus definition: 100 English Wikipedia articles, each with its latest
+# 21 consecutive revisions (20 real edits). Fetched once with
+# `sourced bench fetch`; the snapshot is frozen with a checksum.
+#
+# Topics are spread across fields and avoid living people. Wikipedia text is
+# CC BY-SA 4.0: keep the fetched snapshot out of git, or attribute and
+# share it under the same license.
+name: wikipedia-100
+lang: en
+revisions: 21
+titles:
+  # Science
+  - Photosynthesis
+  - Black hole
+  - Plate tectonics
+  - DNA
+  - Climate change
+  - Vaccine
+  - Antibiotic
+  - Evolution
+  - Periodic table
+  - Quantum mechanics
+  - General relativity
+  - Water
+  - Volcano
+  - Earthquake
+  - Tropical cyclone
+  - Coral reef
+  - Honey bee
+  - Tardigrade
+  - Penicillin
+  - Insulin
+  # Technology
+  - Internet
+  - World Wide Web
+  - Linux
+  - Python (programming language)
+  - Go (programming language)
+  - Git
+  - Transmission Control Protocol
+  - Domain Name System
+  - HTTPS
+  - Public-key cryptography
+  - SHA-2
+  - Wikipedia
+  - Large language model
+  - Machine learning
+  - Transistor
+  - Smartphone
+  - Bitcoin
+  - Email
+  - Unicode
+  - JSON
+  # History
+  - Roman Empire
+  - Ancient Egypt
+  - French Revolution
+  - Industrial Revolution
+  - World War I
+  - World War II
+  - Cold War
+  - Renaissance
+  - Byzantine Empire
+  - Ottoman Empire
+  - Silk Road
+  - Printing press
+  - Black Death
+  - Apollo 11
+  - Magna Carta
+  # Places
+  - Lisbon
+  - Cape Verde
+  - Amazon River
+  - Sahara
+  - Mount Everest
+  - Iceland
+  - Tokyo
+  - Nile
+  - Mediterranean Sea
+  - Great Barrier Reef
+  - Antarctica
+  - Himalayas
+  - Venice
+  - Istanbul
+  - Lake Baikal
+  # Culture and people of the past
+  - Mona Lisa
+  - Jazz
+  - Opera
+  - Chess
+  - Association football
+  - Olympic Games
+  - Coffee
+  - Tea
+  - Bread
+  - Origami
+  - Haiku
+  - William Shakespeare
+  - Ludwig van Beethoven
+  - Leonardo da Vinci
+  - Marie Curie
+  - Albert Einstein
+  - Charles Darwin
+  - Ada Lovelace
+  - Isaac Newton
+  - Galileo Galilei
+  # Society
+  - Democracy
+  - Inflation
+  - Supply and demand
+  - Human rights
+  - United Nations
+  - European Union
+  - Library
+  - Encyclopedia
+  - Book
+  - Newspaper

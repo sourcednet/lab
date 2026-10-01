@@ -1,0 +1,7 @@
+# E1/E2: smaller chunks. Expect more durable citations and cheaper answers,
+# with less context per passage.
+name: small-chunks
+corpus: bench/corpus/wikipedia-100
+chunking: {min: 150, target: 800, max: 2000}
+experiments: [stability, tokens, passages, ranking]
+ranking: {questions: bench/questions/wikipedia-100.yaml}

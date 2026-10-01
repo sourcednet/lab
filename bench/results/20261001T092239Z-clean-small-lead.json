@@ -1,0 +1,375 @@
+{
+  "name": "clean-small-lead",
+  "config": {
+    "name": "clean-small-lead",
+    "corpus": "bench/corpus/wikipedia-100",
+    "articles": 0,
+    "chunking": {
+      "min": 150,
+      "target": 800,
+      "max": 2000
+    },
+    "extraction": {
+      "drop": [
+        ".reflist",
+        "ol.references",
+        ".mw-references-wrap",
+        "sup.reference",
+        ".navbox",
+        ".navbox-styles",
+        ".hatnote",
+        "figure",
+        ".thumb",
+        ".metadata",
+        ".sistersitebox",
+        ".noprint",
+        ".mw-empty-elt"
+      ],
+      "drop_sections": [
+        "See also",
+        "External links",
+        "Further reading",
+        "References",
+        "Bibliography"
+      ]
+    },
+    "ranker": "bm25-lead",
+    "experiments": [
+      "tokens",
+      "ranking"
+    ],
+    "tokens": {
+      "encoding": "cl100k_base",
+      "query_chunks": 3
+    },
+    "passages": {
+      "per_article": 3,
+      "seed": 1
+    },
+    "latency": {
+      "samples": 20,
+      "publisher_delay_ms": 50
+    },
+    "corrections": {
+      "samples": 10,
+      "poll_interval_ms": 2000
+    },
+    "ranking": {
+      "questions": "bench/questions/wikipedia-100.yaml",
+      "held_out": "bench/questions/wikipedia-100-heldout.yaml"
+    }
+  },
+  "corpus": {
+    "name": "wikipedia-100",
+    "checksum": "sha256:cfb83094b4540fc0cdbd2622e2b445d5c16d5d1830806894f79c6095188aa5b5",
+    "articles": 100
+  },
+  "git": {
+    "commit": "d24b9a7ad3871f295a4679f22847176420d12750",
+    "dirty": true
+  },
+  "go": "go1.24.4",
+  "started": "2026-10-01T09:22:39Z",
+  "metrics": {
+    "ranking": {
+      "ranker": "bm25-lead",
+      "questions": 25,
+      "hit_at_1": 0.64,
+      "hit_at_3": 0.8,
+      "hit_at_5": 0.84,
+      "hit_at_10": 0.92,
+      "mrr": 0.7417,
+      "answerable": 1,
+      "paging": {
+        "page_size": 5,
+        "max_pages": 3,
+        "answered": 0.92,
+        "mean_pages": 1.24,
+        "mean_tokens": 1157.04,
+        "tokens_per_page": 933.0968
+      },
+      "search": {
+        "page_hit_at_1": 0.96,
+        "page_hit_at_3": 1,
+        "page_hit_at_5": 1,
+        "answer_in_top5_passages": 0.72,
+        "answer_in_returned_passages": 0.76
+      },
+      "per_question": [
+        {
+          "question": "When did Apollo 11 land on the Moon?",
+          "rank": 7
+        },
+        {
+          "question": "Who designed the Go programming language?",
+          "rank": 1
+        },
+        {
+          "question": "Who created Python?",
+          "rank": 19
+        },
+        {
+          "question": "How deep is Lake Baikal?",
+          "rank": 21
+        },
+        {
+          "question": "Who discovered penicillin?",
+          "rank": 1
+        },
+        {
+          "question": "When was Magna Carta sealed?",
+          "rank": 1
+        },
+        {
+          "question": "Who painted the Mona Lisa?",
+          "rank": 2
+        },
+        {
+          "question": "How tall is Mount Everest?",
+          "rank": 10
+        },
+        {
+          "question": "When did Constantinople fall to the Ottomans?",
+          "rank": 1
+        },
+        {
+          "question": "Which machine did Ada Lovelace write about?",
+          "rank": 1
+        },
+        {
+          "question": "What is the capital of Cape Verde?",
+          "rank": 2
+        },
+        {
+          "question": "Which organ produces insulin?",
+          "rank": 2
+        },
+        {
+          "question": "Which bacterium caused the Black Death?",
+          "rank": 1
+        },
+        {
+          "question": "How many morae does a haiku have?",
+          "rank": 1
+        },
+        {
+          "question": "What are tardigrades also called?",
+          "rank": 1
+        },
+        {
+          "question": "Which treaty established the European Union?",
+          "rank": 1
+        },
+        {
+          "question": "Who created the Linux kernel?",
+          "rank": 2
+        },
+        {
+          "question": "Who invented the World Wide Web?",
+          "rank": 1
+        },
+        {
+          "question": "When was the first working transistor built?",
+          "rank": 1
+        },
+        {
+          "question": "Who created Git?",
+          "rank": 1
+        },
+        {
+          "question": "What was Tokyo formerly called?",
+          "rank": 5
+        },
+        {
+          "question": "Which regions did the Silk Road connect?",
+          "rank": 1
+        },
+        {
+          "question": "Who invented Bitcoin?",
+          "rank": 1
+        },
+        {
+          "question": "Which pigment absorbs light in photosynthesis?",
+          "rank": 1
+        },
+        {
+          "question": "Where was Beethoven born?",
+          "rank": 1
+        }
+      ],
+      "held_out": {
+        "questions": 25,
+        "hit_at_1": 0.52,
+        "hit_at_3": 0.88,
+        "hit_at_5": 0.88,
+        "hit_at_10": 0.88,
+        "mrr": 0.6911,
+        "answerable": 1,
+        "paging": {
+          "page_size": 5,
+          "max_pages": 3,
+          "answered": 0.88,
+          "mean_pages": 1.24,
+          "mean_tokens": 1252.92,
+          "tokens_per_page": 1010.4194
+        },
+        "search": {
+          "page_hit_at_1": 0.88,
+          "page_hit_at_3": 1,
+          "page_hit_at_5": 1,
+          "answer_in_top5_passages": 0.44,
+          "answer_in_returned_passages": 0.56
+        },
+        "per_question": [
+          {
+            "question": "Who first proposed the existence of black holes?",
+            "rank": 2
+          },
+          {
+            "question": "Who discovered the double helix structure of DNA?",
+            "rank": 2
+          },
+          {
+            "question": "Who developed the first vaccine?",
+            "rank": 1
+          },
+          {
+            "question": "When did Mendeleev publish his periodic table?",
+            "rank": 2
+          },
+          {
+            "question": "What is the largest volcano in the Solar System?",
+            "rank": 2
+          },
+          {
+            "question": "What do honey bees collect from flowers to make honey?",
+            "rank": 3
+          },
+          {
+            "question": "Who designed TCP?",
+            "rank": 81
+          },
+          {
+            "question": "Which port does DNS use?",
+            "rank": 1
+          },
+          {
+            "question": "Which agency designed SHA-2?",
+            "rank": 1
+          },
+          {
+            "question": "When was Wikipedia launched?",
+            "rank": 1
+          },
+          {
+            "question": "When was Unicode first published?",
+            "rank": 1
+          },
+          {
+            "question": "Who specified the JSON format?",
+            "rank": 1
+          },
+          {
+            "question": "When was the Bastille stormed?",
+            "rank": 1
+          },
+          {
+            "question": "When did World War I end?",
+            "rank": 2
+          },
+          {
+            "question": "Who invented the printing press?",
+            "rank": 1
+          },
+          {
+            "question": "When was Lisbon destroyed by an earthquake?",
+            "rank": 2
+          },
+          {
+            "question": "How long is the Amazon River?",
+            "rank": 2
+          },
+          {
+            "question": "How large is the Sahara?",
+            "rank": 23
+          },
+          {
+            "question": "Who first reached the South Pole?",
+            "rank": 1
+          },
+          {
+            "question": "What is the highest mountain in the Himalayas?",
+            "rank": 1
+          },
+          {
+            "question": "How many islands is Venice built on?",
+            "rank": 3
+          },
+          {
+            "question": "How many squares does a chessboard have?",
+            "rank": 1
+          },
+          {
+            "question": "Where does coffee come from originally?",
+            "rank": 18
+          },
+          {
+            "question": "Where was Shakespeare born?",
+            "rank": 1
+          },
+          {
+            "question": "Which elements did Marie Curie discover?",
+            "rank": 1
+          }
+        ]
+      }
+    },
+    "tokens": {
+      "encoding": "cl100k_base",
+      "pages": 100,
+      "raw_html": {
+        "tokens": 20437637,
+        "chars": 62064819
+      },
+      "readability_text": {
+        "tokens": 2590368,
+        "chars": 10137756
+      },
+      "sourced_all_chunks": {
+        "tokens": 2587166,
+        "chars": 10626216
+      },
+      "sourced_query_chunks": {
+        "tokens": 44227,
+        "chars": 177703
+      },
+      "chunks_vs_html": 0.1266,
+      "chunks_vs_readability": 0.9988,
+      "query_vs_html": 0.0022,
+      "query_vs_readability": 0.0171,
+      "per_page_chunks_tokens": {
+        "n": 100,
+        "mean": 25871.66,
+        "median": 22813,
+        "p10": 10904,
+        "p90": 40947,
+        "min": 7643,
+        "max": 81235
+      },
+      "per_page_query_chunks_tokens": {
+        "n": 100,
+        "mean": 442.27,
+        "median": 386,
+        "p10": 190,
+        "p90": 711,
+        "min": 88,
+        "max": 1233
+      },
+      "query": "the article's title, top 3 chunks"
+    }
+  },
+  "timings_seconds": {
+    "ranking": 21.44,
+    "tokens": 29.27
+  }
+}

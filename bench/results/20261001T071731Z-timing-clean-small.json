@@ -1,0 +1,137 @@
+{
+  "name": "timing-clean-small",
+  "config": {
+    "name": "timing-clean-small",
+    "corpus": "bench/corpus/wikipedia-100",
+    "articles": 0,
+    "chunking": {
+      "min": 150,
+      "target": 800,
+      "max": 2000
+    },
+    "extraction": {
+      "drop": [
+        ".reflist",
+        "ol.references",
+        ".mw-references-wrap",
+        "sup.reference",
+        ".navbox",
+        ".navbox-styles",
+        ".hatnote",
+        "figure",
+        ".thumb",
+        ".metadata",
+        ".sistersitebox",
+        ".noprint",
+        ".mw-empty-elt"
+      ]
+    },
+    "experiments": [
+      "latency",
+      "corrections"
+    ],
+    "tokens": {
+      "encoding": "cl100k_base",
+      "query_chunks": 3
+    },
+    "passages": {
+      "per_article": 3,
+      "seed": 1
+    },
+    "latency": {
+      "samples": 20,
+      "publisher_delay_ms": 50
+    },
+    "corrections": {
+      "samples": 10,
+      "poll_interval_ms": 2000
+    },
+    "ranking": {
+      "questions": "bench/questions/wikipedia-100.yaml"
+    }
+  },
+  "corpus": {
+    "name": "wikipedia-100",
+    "checksum": "sha256:cfb83094b4540fc0cdbd2622e2b445d5c16d5d1830806894f79c6095188aa5b5",
+    "articles": 100
+  },
+  "git": {
+    "commit": "a25d4e7ba72fc1fd348c8344f7fa322e62f86494",
+    "dirty": false
+  },
+  "go": "go1.24.4",
+  "started": "2026-10-01T07:17:31Z",
+  "metrics": {
+    "corrections": {
+      "samples": 10,
+      "poll_interval_ms": 2000,
+      "polling_only_ms": {
+        "n": 10,
+        "mean": 1361.3853,
+        "median": 1360.183,
+        "p10": 1326.654,
+        "p90": 1386.846,
+        "min": 1326.654,
+        "max": 1387.209
+      },
+      "with_announce_ms": {
+        "n": 10,
+        "mean": 83.4006,
+        "median": 81.98,
+        "p10": 16.528,
+        "p90": 119.264,
+        "min": 16.528,
+        "max": 132.813
+      },
+      "note": "resolve answers are checked live, so they show a correction immediately"
+    },
+    "latency": {
+      "samples": 20,
+      "publisher_delay_ms": 50,
+      "direct_cold_ms": {
+        "n": 20,
+        "mean": 218.0944,
+        "median": 216.188,
+        "p10": 213.33,
+        "p90": 222.826,
+        "min": 213.118,
+        "max": 228.066
+      },
+      "direct_warm_ms": {
+        "n": 20,
+        "mean": 165.3326,
+        "median": 164.998,
+        "p10": 156.862,
+        "p90": 170.436,
+        "min": 156.335,
+        "max": 176.594
+      },
+      "resolver_cold_ms": {
+        "n": 20,
+        "mean": 544.4324,
+        "median": 489.168,
+        "p10": 312.174,
+        "p90": 688.591,
+        "min": 295.992,
+        "max": 1061.974
+      },
+      "resolver_warm_ms": {
+        "n": 20,
+        "mean": 19.1335,
+        "median": 14.72,
+        "p10": 7.232,
+        "p90": 33.704,
+        "min": 6.27,
+        "max": 43.894
+      }
+    }
+  },
+  "timed_experiments": [
+    "latency",
+    "corrections"
+  ],
+  "timings_seconds": {
+    "corrections": 31.316,
+    "latency": 20.636
+  }
+}

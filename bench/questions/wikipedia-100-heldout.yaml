@@ -1,0 +1,33 @@
+# Held-out questions about wikipedia-100 articles (Phase 9, Oct 1), each
+# with text its answer contains. Written before any ranker change was tried
+# on them, so that rankers tuned on wikipedia-100.yaml can be checked on
+# questions they weren't tuned on. Answers that appear in more than about a
+# dozen of the article's chunks were replaced, since they hit whatever the
+# ranking. Articles don't overlap with wikipedia-100.yaml.
+corpus: wikipedia-100
+questions:
+  - {article: "Black hole", question: "Who first proposed the existence of black holes?", answer: "John Michell"}
+  - {article: "DNA", question: "Who discovered the double helix structure of DNA?", answer: "Watson"}
+  - {article: "Vaccine", question: "Who developed the first vaccine?", answer: "Jenner"}
+  - {article: "Periodic table", question: "When did Mendeleev publish his periodic table?", answer: "1869"}
+  - {article: "Volcano", question: "What is the largest volcano in the Solar System?", answer: "Olympus Mons"}
+  - {article: "Honey bee", question: "What do honey bees collect from flowers to make honey?", answer: "nectar"}
+  - {article: "Transmission Control Protocol", question: "Who designed TCP?", answer: "Vint Cerf"}
+  - {article: "Domain Name System", question: "Which port does DNS use?", answer: "53"}
+  - {article: "SHA-2", question: "Which agency designed SHA-2?", answer: "National Security Agency"}
+  - {article: "Wikipedia", question: "When was Wikipedia launched?", answer: "2001"}
+  - {article: "Unicode", question: "When was Unicode first published?", answer: "1991"}
+  - {article: "JSON", question: "Who specified the JSON format?", answer: "Douglas Crockford"}
+  - {article: "French Revolution", question: "When was the Bastille stormed?", answer: "14 July 1789"}
+  - {article: "World War I", question: "When did World War I end?", answer: "11 November 1918"}
+  - {article: "Printing press", question: "Who invented the printing press?", answer: "Johannes Gutenberg"}
+  - {article: "Lisbon", question: "When was Lisbon destroyed by an earthquake?", answer: "1755"}
+  - {article: "Amazon River", question: "How long is the Amazon River?", answer: "6,400"}
+  - {article: "Sahara", question: "How large is the Sahara?", answer: "9,200,000"}
+  - {article: "Antarctica", question: "Who first reached the South Pole?", answer: "Amundsen"}
+  - {article: "Himalayas", question: "What is the highest mountain in the Himalayas?", answer: "Everest"}
+  - {article: "Venice", question: "How many islands is Venice built on?", answer: "118"}
+  - {article: "Chess", question: "How many squares does a chessboard have?", answer: "64"}
+  - {article: "Coffee", question: "Where does coffee come from originally?", answer: "Ethiopia"}
+  - {article: "William Shakespeare", question: "Where was Shakespeare born?", answer: "Stratford-upon-Avon"}
+  - {article: "Marie Curie", question: "Which elements did Marie Curie discover?", answer: "polonium"}

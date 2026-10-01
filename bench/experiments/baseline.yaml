@@ -1,0 +1,10 @@
+# Baseline: the spec's chunk sizes, naive extraction (everything in <main>
+# is signed, as a simple publisher plugin would), every deterministic
+# experiment. Compare every other config against this one.
+name: baseline
+corpus: bench/corpus/wikipedia-100
+chunking: {min: 300, target: 1500, max: 4000}
+experiments: [stability, tokens, cost, passages, ranking]
+tokens: {encoding: cl100k_base, query_chunks: 3}
+passages: {per_article: 3, seed: 1}
+ranking: {questions: bench/questions/wikipedia-100.yaml}

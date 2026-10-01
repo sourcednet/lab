@@ -1,0 +1,6 @@
+# E1/E2: larger chunks. Expect less durable citations and costlier answers.
+name: large-chunks
+corpus: bench/corpus/wikipedia-100
+chunking: {min: 600, target: 3000, max: 6000}
+experiments: [stability, tokens, passages, ranking]
+ranking: {questions: bench/questions/wikipedia-100.yaml}

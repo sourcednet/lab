@@ -1,0 +1,12 @@
+# The second ranker: clean-small with BM25 plus a prior for a page's
+# opening (lead and infobox). Only the experiments that rank. Compare with
+# clean-small, which uses the default (bm25).
+name: clean-small-lead
+corpus: bench/corpus/wikipedia-100
+chunking: {min: 150, target: 800, max: 2000}
+extraction:
+  drop: [".reflist", "ol.references", ".mw-references-wrap", "sup.reference", ".navbox", ".navbox-styles", ".hatnote", "figure", ".thumb", ".metadata", ".sistersitebox", ".noprint", ".mw-empty-elt"]
+  drop_sections: ["See also", "External links", "Further reading", "References", "Bibliography"]
+ranker: bm25-lead
+experiments: [tokens, ranking]
+ranking: {questions: bench/questions/wikipedia-100.yaml, held_out: bench/questions/wikipedia-100-heldout.yaml}

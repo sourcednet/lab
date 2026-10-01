@@ -1,0 +1,10 @@
+# E4 latency and E5 correction speed. These measure wall-clock time, so
+# results vary between runs; run on an otherwise idle machine.
+name: timing
+# Pinned to the settings of the first recorded run (the chunker's default
+# was 300/1500/4000 then; it is 150/800/2000 now).
+chunking: {min: 300, target: 1500, max: 4000}
+corpus: bench/corpus/wikipedia-100
+experiments: [latency, corrections]
+latency: {samples: 20, publisher_delay_ms: 50}
+corrections: {samples: 10, poll_interval_ms: 2000}

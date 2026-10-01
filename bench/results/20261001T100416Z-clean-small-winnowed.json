@@ -1,0 +1,330 @@
+{
+  "name": "clean-small-winnowed",
+  "config": {
+    "name": "clean-small-winnowed",
+    "corpus": "bench/corpus/wikipedia-100",
+    "articles": 0,
+    "chunking": {
+      "min": 150,
+      "target": 800,
+      "max": 2000
+    },
+    "extraction": {
+      "drop": [
+        ".reflist",
+        "ol.references",
+        ".mw-references-wrap",
+        "sup.reference",
+        ".navbox",
+        ".navbox-styles",
+        ".hatnote",
+        "figure",
+        ".thumb",
+        ".metadata",
+        ".sistersitebox",
+        ".noprint",
+        ".mw-empty-elt"
+      ],
+      "drop_sections": [
+        "See also",
+        "External links",
+        "Further reading",
+        "References",
+        "Bibliography"
+      ]
+    },
+    "ranker": "bm25",
+    "index": "winnowed",
+    "experiments": [
+      "cost",
+      "passages"
+    ],
+    "tokens": {
+      "encoding": "cl100k_base",
+      "query_chunks": 3
+    },
+    "passages": {
+      "per_article": 3,
+      "seed": 1
+    },
+    "latency": {
+      "samples": 20,
+      "publisher_delay_ms": 50
+    },
+    "corrections": {
+      "samples": 10,
+      "poll_interval_ms": 2000
+    },
+    "ranking": {
+      "questions": "bench/questions/wikipedia-100.yaml",
+      "held_out": "bench/questions/wikipedia-100-heldout.yaml"
+    }
+  },
+  "corpus": {
+    "name": "wikipedia-100",
+    "checksum": "sha256:cfb83094b4540fc0cdbd2622e2b445d5c16d5d1830806894f79c6095188aa5b5",
+    "articles": 100
+  },
+  "git": {
+    "commit": "67356ae3eb168273c1be2d6cbdd74a4086983839",
+    "dirty": true
+  },
+  "go": "go1.24.4",
+  "started": "2026-10-01T10:04:16Z",
+  "metrics": {
+    "cost": {
+      "pages": 100,
+      "versions": 1370,
+      "steps": [
+        {
+          "step": 0,
+          "changed_pages": 100,
+          "bundles_fetched": 100,
+          "records": 100,
+          "chunks": 14365,
+          "chunk_bytes": 10397932,
+          "index_windows": 560485,
+          "db_bytes": 15781888
+        },
+        {
+          "step": 1,
+          "changed_pages": 70,
+          "bundles_fetched": 68,
+          "records": 170,
+          "chunks": 14494,
+          "chunk_bytes": 10501066,
+          "index_windows": 566177,
+          "db_bytes": 18272256
+        },
+        {
+          "step": 2,
+          "changed_pages": 62,
+          "bundles_fetched": 53,
+          "records": 232,
+          "chunks": 14573,
+          "chunk_bytes": 10566227,
+          "index_windows": 569797,
+          "db_bytes": 20357120
+        },
+        {
+          "step": 3,
+          "changed_pages": 67,
+          "bundles_fetched": 58,
+          "records": 299,
+          "chunks": 14664,
+          "chunk_bytes": 10642091,
+          "index_windows": 573930,
+          "db_bytes": 22654976
+        },
+        {
+          "step": 4,
+          "changed_pages": 54,
+          "bundles_fetched": 45,
+          "records": 353,
+          "chunks": 14763,
+          "chunk_bytes": 10722272,
+          "index_windows": 578211,
+          "db_bytes": 24563712
+        },
+        {
+          "step": 5,
+          "changed_pages": 59,
+          "bundles_fetched": 53,
+          "records": 412,
+          "chunks": 14840,
+          "chunk_bytes": 10779753,
+          "index_windows": 581281,
+          "db_bytes": 26648576
+        },
+        {
+          "step": 6,
+          "changed_pages": 59,
+          "bundles_fetched": 50,
+          "records": 471,
+          "chunks": 14920,
+          "chunk_bytes": 10843968,
+          "index_windows": 584801,
+          "db_bytes": 28860416
+        },
+        {
+          "step": 7,
+          "changed_pages": 66,
+          "bundles_fetched": 60,
+          "records": 537,
+          "chunks": 15058,
+          "chunk_bytes": 10932841,
+          "index_windows": 589781,
+          "db_bytes": 31232000
+        },
+        {
+          "step": 8,
+          "changed_pages": 63,
+          "bundles_fetched": 50,
+          "records": 600,
+          "chunks": 15161,
+          "chunk_bytes": 11013824,
+          "index_windows": 594204,
+          "db_bytes": 33480704
+        },
+        {
+          "step": 9,
+          "changed_pages": 64,
+          "bundles_fetched": 53,
+          "records": 664,
+          "chunks": 15267,
+          "chunk_bytes": 11096681,
+          "index_windows": 598788,
+          "db_bytes": 35581952
+        },
+        {
+          "step": 10,
+          "changed_pages": 65,
+          "bundles_fetched": 52,
+          "records": 729,
+          "chunks": 15361,
+          "chunk_bytes": 11167473,
+          "index_windows": 602578,
+          "db_bytes": 37842944
+        },
+        {
+          "step": 11,
+          "changed_pages": 61,
+          "bundles_fetched": 48,
+          "records": 790,
+          "chunks": 15469,
+          "chunk_bytes": 11256581,
+          "index_windows": 607177,
+          "db_bytes": 39964672
+        },
+        {
+          "step": 12,
+          "changed_pages": 59,
+          "bundles_fetched": 53,
+          "records": 849,
+          "chunks": 15545,
+          "chunk_bytes": 11321631,
+          "index_windows": 610756,
+          "db_bytes": 41877504
+        },
+        {
+          "step": 13,
+          "changed_pages": 69,
+          "bundles_fetched": 61,
+          "records": 918,
+          "chunks": 15626,
+          "chunk_bytes": 11376842,
+          "index_windows": 613645,
+          "db_bytes": 43986944
+        },
+        {
+          "step": 14,
+          "changed_pages": 60,
+          "bundles_fetched": 51,
+          "records": 978,
+          "chunks": 15721,
+          "chunk_bytes": 11448008,
+          "index_windows": 617578,
+          "db_bytes": 46010368
+        },
+        {
+          "step": 15,
+          "changed_pages": 69,
+          "bundles_fetched": 57,
+          "records": 1047,
+          "chunks": 15829,
+          "chunk_bytes": 11535857,
+          "index_windows": 622519,
+          "db_bytes": 48373760
+        },
+        {
+          "step": 16,
+          "changed_pages": 65,
+          "bundles_fetched": 56,
+          "records": 1112,
+          "chunks": 15935,
+          "chunk_bytes": 11617196,
+          "index_windows": 626762,
+          "db_bytes": 50708480
+        },
+        {
+          "step": 17,
+          "changed_pages": 64,
+          "bundles_fetched": 54,
+          "records": 1176,
+          "chunks": 16059,
+          "chunk_bytes": 11717098,
+          "index_windows": 632239,
+          "db_bytes": 52932608
+        },
+        {
+          "step": 18,
+          "changed_pages": 66,
+          "bundles_fetched": 52,
+          "records": 1242,
+          "chunks": 16125,
+          "chunk_bytes": 11768239,
+          "index_windows": 635071,
+          "db_bytes": 55250944
+        },
+        {
+          "step": 19,
+          "changed_pages": 64,
+          "bundles_fetched": 51,
+          "records": 1306,
+          "chunks": 16191,
+          "chunk_bytes": 11826214,
+          "index_windows": 638225,
+          "db_bytes": 57573376
+        },
+        {
+          "step": 20,
+          "changed_pages": 64,
+          "bundles_fetched": 45,
+          "records": 1370,
+          "chunks": 16274,
+          "chunk_bytes": 11889031,
+          "index_windows": 641402,
+          "db_bytes": 59719680
+        }
+      ],
+      "resolver_bytes": 71608711,
+      "publisher_bytes": 214310216,
+      "resolver_bytes_per_page": 716087,
+      "resolver_bytes_per_version": 52269,
+      "dedup_ratio": 12.3987,
+      "index_windows_per_chunk": 39.4127,
+      "resolver_index_bytes": 11337728,
+      "resolver_record_bytes": 42946560
+    },
+    "passages": {
+      "exact_sentence": {
+        "samples": 300,
+        "found": 1,
+        "top1": 1,
+        "exact_match": 1,
+        "mean_overlap": 1,
+        "ambiguous": 0.0067
+      },
+      "fragment": {
+        "samples": 300,
+        "found": 0.9733,
+        "top1": 0.9733,
+        "exact_match": 0.9733,
+        "mean_overlap": 0.9733,
+        "ambiguous": 0.0067
+      },
+      "edited_sentence": {
+        "samples": 300,
+        "found": 0.9767,
+        "top1": 0.9767,
+        "exact_match": 0,
+        "mean_overlap": 0.7447,
+        "ambiguous": 0.0067
+      }
+    }
+  },
+  "timings_seconds": {
+    "cost": 133.543,
+    "passages": 62.615
+  }
+}
