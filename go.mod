@@ -2,15 +2,6 @@ module github.com/sourcednet/lab
 
 go 1.24
 
-// Sibling projects, developed side by side in Dev/ until they are published.
-replace github.com/sourcednet/core => ../core
-
-replace github.com/sourcednet/publisher => ../publisher
-
-replace github.com/sourcednet/resolver => ../resolver
-
-replace github.com/sourcednet/testkit => ../testkit
-
 require (
 	github.com/JohannesKaufmann/html-to-markdown/v2 v2.4.0 // indirect
 	github.com/gowebpki/jcs v1.0.2 // indirect
@@ -47,9 +38,9 @@ require (
 require (
 	github.com/go-shiori/go-readability v0.0.0-20251205110129-5db1dc9836f0
 	github.com/pkoukk/tiktoken-go v0.1.8
-	github.com/sourcednet/core v0.0.0-00010101000000-000000000000
-	github.com/sourcednet/publisher v0.0.0-00010101000000-000000000000
-	github.com/sourcednet/resolver v0.0.0-00010101000000-000000000000
-	github.com/sourcednet/testkit v0.0.0-00010101000000-000000000000
+	github.com/sourcednet/core v0.1.0
+	github.com/sourcednet/publisher v0.1.0
+	github.com/sourcednet/resolver v0.1.0
+	github.com/sourcednet/testkit v0.1.0
 	go.yaml.in/yaml/v3 v3.0.5
 )
